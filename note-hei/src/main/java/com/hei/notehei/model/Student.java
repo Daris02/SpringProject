@@ -27,12 +27,12 @@ public class Student implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idStudent;
 
-    @Column
+    @Column(nullable = false)
     private String firstName;
 
-    @Column
+    @Column(nullable = false)
     private String lastName;
 
-    @Column
+    @Column(nullable = false)
     private String email;
 }
