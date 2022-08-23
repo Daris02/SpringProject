@@ -22,8 +22,6 @@ public class NoteService {
     }
 
     public Optional<Note> getNote(Long idNote){
-        return noteRepository.fingById(Long idNote);
+        return noteRepository.findById(idNote);
     }
-
-    public Note addNote()
 }
