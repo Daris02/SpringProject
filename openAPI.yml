@@ -1,0 +1,524 @@
+openapi: "3.0.2"
+info:
+  title: SpringProject's API
+  description: API for student grade
+  version: 1.0.0
+  contact:
+    email: hei.raymond.2@gmail.com
+servers:
+- url: http://STD21099.io/
+paths:
+  /students:
+    post:
+      tags:
+      - Students
+      summary: Add a new student
+      operationId: addStudent
+      requestBody:
+        description: Student object that needs to be added
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStudent'
+        required: true
+      responses:
+        200:
+          description: Student added
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Students'
+        400:
+          description: Bad request
+    get:
+      tags:
+      - Students
+      summary: Get a list of students
+      operationId: getStudent
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: page_size
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Students'
+        400:
+          description: Bad request
+    delete:
+      tags:
+      - Students
+      summary: Delete some students
+      operationId: deleteStudents
+      parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/Students'
+  /students/{id}:
+    get:
+      tags:
+      - Students
+      summary: Get a student
+      operationId: getStudentid
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/Students'
+        400:
+          description: Bad request
+    delete:
+      tags:
+      - Students
+      summary: Delete a student by ID
+      operationId: deleteStudentid
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          maximum: 10.0
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: sucsses
+          content:
+            text/plain:
+              example: Returns the id of the deleted student
+        400:
+          description: Bad request
+    put:
+      tags:
+      - Students
+      summary: Change Student by ID
+      description: Multiple status values can be provided with comma separated strings
+      operationId: putStudentID
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStudent'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/Students'
+        400:
+          description: Bad request
+    patch:
+      tags:
+      - Students
+      summary: Change some details of Student by ID
+      description: "Possible changes on : name & group"
+      operationId: pathStudentID
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStudent'
+            examples:
+              changeName:
+                summary: Change name
+                value:
+                  name : New name
+              changeGroup:
+                summary: Change group
+                value:
+                  group : 'G1'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/CreateStudent'
+        400:
+          description: Bad request
+  /courses:
+    post:
+      tags:
+      - Courses
+      summary: Add a new course
+      operationId: addcourse
+      requestBody:
+        description: course object that needs to be added
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/CreateCourse'
+        required: true
+      responses:
+        200:
+          description: course added
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Course'
+        400:
+          description: Bad request
+    get:
+      tags:
+      - Courses
+      summary: Get a list of courses
+      operationId: getcourse
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          maximum: 10.0
+          minimum: 1.0
+          type: integer
+          format: int64
+      - name: page_size
+        in: query
+        required: false
+        schema:
+          maximum: 10.0
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Course'
+        400:
+          description: Bad request
+  /courses/{id}:
+    get:
+      tags:
+      - Courses
+      summary: Get a course
+      operationId: getcourseid
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/Course'
+        400:
+          description: Bad request
+    delete:
+      tags:
+      - Courses
+      summary: Delete a course by ID
+      operationId: deletecourseid
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200: 
+          description: Successfully deleted
+          content: {}
+        400:
+          description: Bad request
+    put:
+      tags:
+      - Courses
+      summary: Change course by ID
+      description: Multiple status values can be provided with comma separated strings
+      operationId: putcourseID
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          maximum: 10.0
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CreateCourse'
+        400:
+          description: Bad request
+    patch:
+      tags:
+      - Courses
+      summary: Change some details of courses by ID
+      description: "Possible changes on : name & teacher & date"
+      operationId: pathStudentID
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCourse'
+            examples:
+              changeName:
+                summary: Change name
+                value:
+                  name : New name
+              changeTeacher:
+                summary: Change teacher
+                value:
+                  name : Toky Ramarozaka
+              changeDate: 
+                summary: Change date
+                value: date-time
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/CreateCourse'
+        400:
+          description: Bad request
+  /groups:
+    get:
+      tags:
+      - groups
+      summary: Get a list of groups
+      operationId: getgroupe
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: page_size
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Group'
+        400:
+          description: Bad request
+
+  /groups/{id}:
+    get:
+      tags:
+      - groups
+      summary: Get a groupe
+      operationId: getgroupeid
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        400:
+          description: Bad request
+    delete:
+      tags:
+      - groups
+      summary: Delete a group by ID
+      operationId: deletegroupeid
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: Successfully deleted
+          content: {}
+        400:
+          description: Bad request
+    put:
+      tags:
+      - groups
+      summary: Change groupe by ID
+      description: Multiple status values can be provided with comma separated strings
+      operationId: putgroupeID
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGroup'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        400:
+          description: Bad request
+components:
+  schemas:
+    CreateStudent:
+      type: object
+      properties:
+        name:
+          type: string
+          example: daris
+        group:
+          type: string
+          example: G3
+        id:
+          type: integer
+          format: integer
+    CreateCourse:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Base de données
+        teacher:
+          type: string
+          example: Tokimahery Ramarozaka
+        Datetime:
+          type: string
+          format: date-time
+    Course:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+          example: Base de données
+        teacher:
+          type: string
+          example: Tokimahery Ramarozaka
+        Datetime:
+          type: string
+          format: date-time
+    Students:
+      type: object
+      properties:
+        name:
+          type: string
+          example: daris
+        group:
+          type: string
+          example: G3
+        id:
+          type: integer
+          format: int64
+    CreateGroup:
+      type: object
+      properties:
+        name:
+          type: string
+          example: G3
+        group:
+          type: string
+          example: goupe G3
+    Group:
+      type: object
+      properties:
+        name:
+          type: string
+          example: G3
+        group:
+          type: string
+          example: goupe G3
+        id:
+          type: integer
+          format: int64
