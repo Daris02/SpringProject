@@ -1,0 +1,25 @@
+package com.hei.notehei.model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import lombok.*;
+import java.util.List;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@Entity
+public class Group implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(length = 200)
+    private String name;
+
+    @OneToMany
+    private List<Student> students;
+}

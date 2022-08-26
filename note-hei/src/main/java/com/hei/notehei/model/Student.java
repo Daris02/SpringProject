@@ -1,9 +1,7 @@
 package com.hei.notehei.model;
 
 import java.io.Serializable;
-
 import javax.persistence.*;
-
 import lombok.*;
 
 @AllArgsConstructor
@@ -29,4 +27,8 @@ public class Student implements Serializable{
 
     @Column(nullable = false)
     private char gender;
+
+    @ManyToOne
+    @JoinColumn(name = "group_id")
+    private Group group;
 }
