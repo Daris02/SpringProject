@@ -21,7 +21,7 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-    public Optional<Student> getStudent(Integer idStudent){
+    public Optional<Student> getStudent(Long idStudent){
         return studentRepository.findById(idStudent);
     }
 
@@ -29,7 +29,7 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    public void deletStudent(Integer idStudent){
+    public void deletStudent(Long idStudent){
         studentRepository.deleteById(idStudent);
     }
 
