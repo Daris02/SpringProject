@@ -18,7 +18,7 @@ public class Group implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 200)
+    @Column(length = 2)
     private String name;
 
     @OneToMany
