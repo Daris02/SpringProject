@@ -12,6 +12,7 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 @Entity
+@Table
 public class Group implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
