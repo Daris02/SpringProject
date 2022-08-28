@@ -12,7 +12,7 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "T_group")
+@Table(name = "GROUPS")
 public class Group implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

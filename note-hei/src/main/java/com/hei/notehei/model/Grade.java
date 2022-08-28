@@ -12,7 +12,7 @@ import lombok.*;
 @Setter
 @EqualsAndHashCode
 @Entity
-@Table(name = "T_grade")
+@Table(name = "GRADES")
 public class Grade implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
