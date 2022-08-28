@@ -23,8 +23,8 @@ public class StudentController {
     }
 
     @GetMapping("/student/{id}")
-    public Optional<Student> getStudentById(@PathVariable Long id){
-        return studentService.getStudent(id);
+    public Optional<Student> getStudentById(@PathVariable Long idStudent){
+        return studentService.getStudent(idStudent);
     }
 
     @PostMapping("/student")
@@ -33,8 +33,8 @@ public class StudentController {
     }
 
     @DeleteMapping("/student/{id}")
-    public void deletStudentById(@PathVariable Long id){
-        studentService.deletStudent(id);
+    public void deletStudentById(@PathVariable Long idStudent){
+        studentService.deletStudent(idStudent);
     }
 
 }

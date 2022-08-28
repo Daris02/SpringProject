@@ -14,7 +14,7 @@ import lombok.*;
 public class Student implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idStudent;
 
     @Column(nullable = false, length = 100)
     private String firstName;

@@ -23,8 +23,8 @@ public class GroupController {
     }
 
     @GetMapping("/group/{id}")
-    public Optional<Group> getGroupById(@PathVariable Long id){
-        return groupService.getGroup(id); 
+    public Optional<Group> getGroupById(@PathVariable Long idGroup){
+        return groupService.getGroup(idGroup); 
     }
 
     @PostMapping("/group")
@@ -33,7 +33,7 @@ public class GroupController {
     }
 
     @DeleteMapping("/group/{id}")
-    public void deleteGroupById(@PathVariable Long id){
-        groupService.deletGroup(id);
+    public void deleteGroupById(@PathVariable Long idGroup){
+        groupService.deletGroup(idGroup);
     }
 }

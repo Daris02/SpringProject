@@ -16,7 +16,7 @@ import java.util.List;
 public class Group implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idGroup;
 
     @Column(length = 2)
     private String name;

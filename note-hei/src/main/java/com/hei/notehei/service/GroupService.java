@@ -21,15 +21,15 @@ public class GroupService {
         return groupRepository.findAll(); 
     }
 
-    public Optional<Group> getGroup(Long id){
-        return groupRepository.findById(id);
+    public Optional<Group> getGroup(Long idGroup){
+        return groupRepository.findById(idGroup);
     }
 
     public Group addGroup(Group group){
         return groupRepository.save(group);
     }
 
-    public void deletGroup(Long id){
-        groupRepository.deleteById(id);
+    public void deletGroup(Long idGroup){
+        groupRepository.deleteById(idGroup);
     }
 }
