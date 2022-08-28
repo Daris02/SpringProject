@@ -6,11 +6,13 @@ info:
   contact:
     email: hei.raymond.2@gmail.com
 servers:
-- url: http://STD21099.io/
+- url: http://STD21099.springproject.io/
 tags:
 - name: Students
 - name: Groups
 - name: Grades
+- name: Subjects
+- name: Examens
 
 paths:
   /students:
@@ -85,7 +87,7 @@ paths:
             application/json:
               schema:
                   $ref: '#/components/schemas/Student'
-  /students/{id}:
+  /student/{id}:
     get:
       tags:
       - Students
@@ -599,12 +601,18 @@ components:
         name:
           type: string
           example: G3
+        group:
+          type: string
+          example: goupe G3
     Groups:
       type: object
       properties:
         name:
           type: string
           example: G3
+        group:
+          type: string
+          example: goupe G3
         id:
           type: integer
           format: int64
