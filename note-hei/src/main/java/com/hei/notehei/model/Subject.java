@@ -1,6 +1,8 @@
 package com.hei.notehei.model;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 import lombok.*;
 
@@ -18,5 +20,8 @@ public class Subject implements Serializable {
 
     @Column(nullable = false, length = 50)
     private String name;
+
+    @OneToMany
+    private List<Grade> grade;
     
 }

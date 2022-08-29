@@ -2,6 +2,7 @@ package com.hei.notehei.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 import lombok.*;
@@ -23,5 +24,8 @@ public class Examen implements Serializable {
 
     @Column(nullable = false)     // CHECK DATE > new Date()
     private Date date_exam;
+    
+    @OneToMany
+    private List<Grade> grade;
     
 }

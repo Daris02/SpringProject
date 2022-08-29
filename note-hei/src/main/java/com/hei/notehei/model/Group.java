@@ -1,6 +1,8 @@
 package com.hei.notehei.model;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 import lombok.*;
 
@@ -23,8 +25,7 @@ public class Group implements Serializable{
     @Column( length = 50)
     private String groupe;
 
-    /* 
-    @OneToMany
+    @OneToMany(mappedBy = "group")
     private List<Student> students;
-    */
+    
 }

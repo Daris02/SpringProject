@@ -22,15 +22,15 @@ public class Grade implements Serializable {
     private double average;
 
     @ManyToOne
-    @JoinColumn(name = "id_student")
+    @JoinColumn(name = "student")
     private Student student;
     
     @ManyToOne
-    @JoinColumn(name = "id_subject")
+    @JoinColumn(name = "subject")
     private Subject subject;
 
     @ManyToOne
-    @JoinColumn(name = "id_examen")
+    @JoinColumn(name = "examen")
     private Examen examen; 
 
 }
