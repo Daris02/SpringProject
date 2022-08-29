@@ -8,23 +8,15 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @EqualsAndHashCode
 @Entity
-@Table(name = "GROUPS")
-public class Group implements Serializable{
+@Table(name = "SUBJECTS")
+public class Subject implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idGroup;
+    private Long idSubject;
 
-    @Column(nullable = false, length = 2)
+    @Column(nullable = false, length = 50)
     private String name;
-
-    @Column( length = 50)
-    private String groupe;
-
-    /* 
-    @OneToMany
-    private List<Student> students;
-    */
+    
 }
