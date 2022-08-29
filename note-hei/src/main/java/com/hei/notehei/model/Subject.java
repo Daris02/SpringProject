@@ -20,8 +20,5 @@ public class Subject implements Serializable {
 
     @Column(nullable = false, length = 50)
     private String name;
-
-    @OneToMany
-    private List<Grade> grade;
     
 }

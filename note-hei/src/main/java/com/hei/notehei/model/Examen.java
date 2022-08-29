@@ -25,7 +25,4 @@ public class Examen implements Serializable {
     @Column(nullable = false)     // CHECK DATE > new Date()
     private Date date_exam;
     
-    @OneToMany
-    private List<Grade> grade;
-    
 }
