@@ -1,4 +1,4 @@
-package com.hei.notehei;
+package com.hei.notehei ;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
