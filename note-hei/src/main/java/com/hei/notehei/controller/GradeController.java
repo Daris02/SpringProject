@@ -1,25 +1,15 @@
-package com.hei.notehei.controller;
+package com.hei.notehei.Controller;
 
-import java.util.List;
-import java.util.Optional;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import com.hei.notehei.model.Grade;
-import com.hei.notehei.service.GradeService;
-import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 
-@RestController
-@AllArgsConstructor
+@Controller
 public class GradeController {
-    private GradeService gradeService;
-
-    @GetMapping("/grades")
-    public List<Grade> getAllGrades(){
-        return gradeService.getAllGrades();
+    
+    @GetMapping("/index")
+    public String getHomePage(Model model){
+        return "index" ;
     }
-
-    @GetMapping("/grade/{id}")
-    public Optional<Grade> getGradeById(Long idGrade){
-        return gradeService.getGrade(idGrade);
-    }
+    
 }
