@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org"
+xmlns:layout="http://ultraq.net.nz/thymeleaf/Layout"
+>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View</title>
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}">
+
+</head>
+
+<body class="bg-light ">
+
+  <div class="container">
+    <h1 class=" text-warning bg-opacity-50"> List Subject </h1>
+
+    <table class="table ">
+      <thead>
+        <tr>
+          <td>Idgroup</td>
+          <td>Group name</td>
+          <td>Groupe</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="groupe:${listGroupe}">
+          <td th:text="${groupe.idGroup}"></td>
+          <td th:text="${groupe.name}"></td>
+          <td th:text="${groupe.groupe}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+<script src="../static/js/bootstrap.min.js"></script>
+
+</html>
