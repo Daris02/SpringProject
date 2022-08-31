@@ -25,6 +25,7 @@ public class Group implements Serializable{
     @Column( length = 50)
     private String groupe;
 
+    @Transient
     @OneToMany(mappedBy = "groups")
     private List<Student> student;
     
