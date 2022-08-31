@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="NBRW1oEv0p40p3LOVTYZ" name="DataBase">
-        <mxGraphModel dx="807" dy="1120" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+        <mxGraphModel dx="1132" dy="823" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="ERcDOiO3SIQjmTAbq5j4-0"/>
                 <mxCell id="ERcDOiO3SIQjmTAbq5j4-1" parent="ERcDOiO3SIQjmTAbq5j4-0"/>
@@ -124,13 +124,13 @@
                 <mxCell id="ZPrqwFIQKR4phmHeP1VJ-12" value="FOREIGN KEY" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" parent="ERcDOiO3SIQjmTAbq5j4-20" vertex="1">
                     <mxGeometry x="160" y="120" width="120" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="0" value="idStudent" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="ERcDOiO3SIQjmTAbq5j4-20">
+                <mxCell id="0" value="idStudent" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" parent="ERcDOiO3SIQjmTAbq5j4-20" vertex="1">
                     <mxGeometry y="150" width="80" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="1" value="INT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="ERcDOiO3SIQjmTAbq5j4-20">
+                <mxCell id="1" value="INT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" parent="ERcDOiO3SIQjmTAbq5j4-20" vertex="1">
                     <mxGeometry x="110" y="150" width="40" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="2" value="FOREIGN KEY" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" vertex="1" parent="ERcDOiO3SIQjmTAbq5j4-20">
+                <mxCell id="2" value="FOREIGN KEY" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" parent="ERcDOiO3SIQjmTAbq5j4-20" vertex="1">
                     <mxGeometry x="160" y="150" width="120" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="ERcDOiO3SIQjmTAbq5j4-23" value="SUBJECT" style="swimlane;rounded=0;fontSize=15;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" parent="ERcDOiO3SIQjmTAbq5j4-1" vertex="1">
@@ -217,7 +217,7 @@
                         <mxPoint x="230" y="410" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="ERcDOiO3SIQjmTAbq5j4-40" value="1,n" style="endArrow=none;html=1;fontSize=15;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="ERcDOiO3SIQjmTAbq5j4-1" target="ERcDOiO3SIQjmTAbq5j4-23" edge="1" source="ERcDOiO3SIQjmTAbq5j4-34">
+                <mxCell id="ERcDOiO3SIQjmTAbq5j4-40" value="1,n" style="endArrow=none;html=1;fontSize=15;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="ERcDOiO3SIQjmTAbq5j4-1" source="ERcDOiO3SIQjmTAbq5j4-34" target="ERcDOiO3SIQjmTAbq5j4-23" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="680" y="470" as="sourcePoint"/>
                         <mxPoint x="620" y="540" as="targetPoint"/>
