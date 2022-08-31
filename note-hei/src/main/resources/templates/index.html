@@ -8,23 +8,52 @@ xmlns:layout="http://ultraq.net.nz/thymeleaf/Layout" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>View</title>
   <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" >
-
+  <link rel="stylesheet" href="../static/css/style.css" th:href="@{css/style.css}" >
 </head>
 <body >
-  <h1 class="text text-warning "> Spring Project </h1>
   <header>
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+      <div class="container-fluid">
+        <a class="navbar-brand text-warning" th:href="${index}">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active text-warning" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="./student.html" data-th-href="@{/student}">Student</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="./groupe.html" data-th-href="@{/groupe}">Group</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="./subject.html" data-th-href="@{/subject}">Subject</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="./examen.html" data-th-href="@{/examen}">Examen</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning disabled">Teacher</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-  <li><a th:href="@{/groupe}" style="text-decoration: none;">Groupe</li>
   <section layout:fragment="content"></section>
 
   <footer>
     <div class="fixed-bottom">
-      <small class="text-warning">@HEI</small>
+      <small class="text-warning">HEI</small>
     </div>
   </footer>
 
 </body>
-<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/bootstrap.min.js" th:href="@{js/bootstrap.min.js}"></script>
+<script src="../static/js/bootstrap.bundle.min.js" th:href="@{js/bootstrap.bundle.min.js}"></script>
+<script src="../static/js/jquery-3.6.1.min.js" th:href="@{js/jquery-3.6.1.min.js}"></script>
 </html>

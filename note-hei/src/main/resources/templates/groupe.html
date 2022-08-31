@@ -9,14 +9,49 @@ layout:decorator="index" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>View</title>
   <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}">
-
+  <link rel="stylesheet" href="../static/css/style.css" th:href="@{css/style.css}" >
 </head>
 
 <body>
-  <h1 class=" text-warning bg-opacity-50"> List Group </h1>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+      <div class="container-fluid">
+        <a class="navbar-brand text-warning" th:href="${groupe}">Groupe</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="./index.html" data-th-href="@{/index}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="#">Student</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-warning" aria-current="page" th:href="${groupe}" >Group</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="#">Subject</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="#">Examen</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning disabled">Teacher</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <div class="container" layout:fragment="content">
-    <table class="table ">
+    <div class="container">
+      <h2 class=" text-warning bg-opacity-50 mt-5"> List Group </h2>
+    </div>
+    <table class="table table-dark table-striped ml-5 mr-5 my-5">
       <thead>
         <tr>
           <td>Idgroup</td>
@@ -35,6 +70,7 @@ layout:decorator="index" >
   </div>
 
 </body>
-<script src="../static/js/bootstrap.min.js"></script>
-
+<script src="../static/js/bootstrap.min.js" th:href="@{js/bootstrap.min.js}"></script>
+<script src="../static/js/bootstrap.bundle.min.js" th:href="@{js/bootstrap.bundle.min.js}"></script>
+<script src="../static/js/jquery-3.6.1.min.js" th:href="@{js/jquery-3.6.1.min.js}"></script>
 </html>
