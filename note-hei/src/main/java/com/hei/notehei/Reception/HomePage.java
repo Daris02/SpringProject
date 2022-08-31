@@ -19,7 +19,7 @@ public class HomePage {
     GroupRepository groupRepository;
 
     @RequestMapping
-    public String getHomePage(Model model){
+    public String getHome(Model model){
         return "index" ;
     }
 
