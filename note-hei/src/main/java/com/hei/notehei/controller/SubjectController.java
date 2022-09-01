@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SubjectController {
     
-    @GetMapping("/index")
-    public String getHomePage(Model model){
-        return "index" ;
+    @GetMapping("/subject")
+    public String getSubjectPage(Model model){
+        return "subject" ;
     }
 
 }

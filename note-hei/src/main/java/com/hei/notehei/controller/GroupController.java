@@ -1,15 +1,35 @@
 package com.hei.notehei.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.hei.notehei.model.Groups;
+import com.hei.notehei.repository.GroupRepository;
 
 @Controller
 public class GroupController {
-    
-    @GetMapping("/index")
-    public String getHomePage(Model model){
-        return "index" ;
+    @Autowired
+    private GroupRepository groupRepository;
+
+    @GetMapping("/groupe")
+    public String getGroupePage(Model model, 
+            @RequestParam(name = "wordSearch",defaultValue ="") String wordSearch,
+            @RequestParam(name = "page",defaultValue ="0") Integer p, 
+            @RequestParam(name = "size",defaultValue ="5") Integer s){
+
+        Page<Groups> pageGroupe = groupRepository.search("%"+wordSearch+"%",PageRequest.of(p, s));
+        model.addAttribute("listGroupe", pageGroupe.getContent());
+
+        Integer[] pages = new Integer[pageGroupe.getTotalPages()];
+        model.addAttribute("pages", pages);
+        model.addAttribute("pageCourant", p);
+        model.addAttribute("wordSearch", wordSearch);
+        return "groupe";
     }
     
 }
