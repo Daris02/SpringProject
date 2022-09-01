@@ -1,76 +1,53 @@
 <!DOCTYPE html>
-<html xmlns:th="https://thymeleaf.org"
-xmlns:layout="http://ultraq.net.nz/thymeleaf/Layout"
-layout:decorator="index" >
+<html xmlns:th="https://thymeleaf.org" >
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>View</title>
-  <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}">
-  <link rel="stylesheet" href="../static/css/style.css" th:href="@{css/style.css}" >
-</head>
+  <head th:replace="index :: html_header" ></head>
 
 <body>
+  <div th:replace="index :: header"></div>
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
-      <div class="container-fluid">
-        <a class="navbar-brand text-warning" th:href="${groupe}">Groupe</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link text-warning" href="./index.html" data-th-href="@{/index}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-warning" href="#">Student</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active text-warning" aria-current="page" th:href="${groupe}" >Group</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-warning" href="#">Subject</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-warning" href="#">Examen</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-warning disabled">Teacher</a>
-            </li>
-          </ul>
+  <div class="container" >
+      <div id="card" class="card bg-secondary ml-2 mr-2">
+        <div class="card-header">
+          <h3 class=" text-warning bg-opacity-50 mt-5"> List Group </h3>
+        </div>
+        <div class="card-body">
+          <div class="container">
+            <form th:action="@{/groupe}" method="get">
+              <input type="text" name="wordSearch">
+              <button type="submit" class="btn btn-secondary"> Search </button>
+            </form>
+          </div>
+          <table class="table table-dark table-striped ml-5 mr-5 my-5">
+            <thead>
+              <tr class="text-warning">
+                <td>Group </td>
+                <td>Name</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="groupe:${listGroupe}">
+                <td th:text="${groupe.name}"></td>
+                <td th:text="${groupe.groupe}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer" th:fragment="card-footer">
+          <div class="">
+            <ul class="nav nav-pills justify-content-center ">
+              <li class="nav-item " th:classappend="${status.index == pageCourant} ? 'active' : '' "
+                th:each="p,status:${pages}">
+                <a class="nav-link text-warning" th:href="@{/groupe(page=${status.index},wordSearch=${wordSearch})}"
+                  th:text="${status.index}"></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </nav>
-  </header>
-
-  <div class="container" layout:fragment="content">
-    <div class="container">
-      <h2 class=" text-warning bg-opacity-50 mt-5"> List Group </h2>
-    </div>
-    <table class="table table-dark table-striped ml-5 mr-5 my-5">
-      <thead>
-        <tr>
-          <td>Idgroup</td>
-          <td>Group name</td>
-          <td>Groupe</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr th:each="groupe:${listGroupe}">
-          <td th:text="${groupe.idGroup}"></td>
-          <td th:text="${groupe.name}"></td>
-          <td th:text="${groupe.groupe}"></td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 
+
 </body>
-<script src="../static/js/bootstrap.min.js" th:href="@{js/bootstrap.min.js}"></script>
-<script src="../static/js/bootstrap.bundle.min.js" th:href="@{js/bootstrap.bundle.min.js}"></script>
-<script src="../static/js/jquery-3.6.1.min.js" th:href="@{js/jquery-3.6.1.min.js}"></script>
+  <div th:replace="index :: script"></div>
 </html>

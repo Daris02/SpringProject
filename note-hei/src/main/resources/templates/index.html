@@ -1,42 +1,38 @@
 <!DOCTYPE html>
-<html xmlns:th="https://thymeleaf.org" 
-xmlns:layout="http://ultraq.net.nz/thymeleaf/Layout" >
+<html xmlns:th="https://thymeleaf.org" xmlns:layout="http://ultraq.net.nz/thymeleaf/Layout">
 
-<head>
+<head th:fragment="html_header">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>View</title>
-  <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" >
-  <link rel="stylesheet" href="../static/css/style.css" th:href="@{css/style.css}" >
+  <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}">
+  <link rel="stylesheet" href="../static/css/style.css" th:href="@{css/style.css}">
 </head>
-<body >
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+
+<body>
+  <header th:fragment="header">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top ">
       <div class="container-fluid">
-        <a class="navbar-brand text-warning" th:href="${index}">Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse " id="navbarNav">
+          <ul class="navbar-nav col justify-content-around">
             <li class="nav-item">
-              <a class="nav-link active text-warning" aria-current="page" href="./index.html">Home</a>
+              <a class="nav-link text-warning" th:href="@{/index}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" href="./student.html" data-th-href="@{/student}">Student</a>
+              <a class="nav-link text-warning" th:href="@{/student}">Student</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" href="./groupe.html" data-th-href="@{/groupe}">Group</a>
+              <a class="nav-link text-warning" th:href="@{/groupe}">Group</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" href="./subject.html" data-th-href="@{/subject}">Subject</a>
+              <a class="nav-link text-warning" th:href="@{/subject}">Subject</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" href="./examen.html" data-th-href="@{/examen}">Examen</a>
+              <a class="nav-link text-warning" th:href="@{/examen}">Examen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning disabled">Teacher</a>
+              <a class="nav-link text-warning disabled">Grade</a>
             </li>
           </ul>
         </div>
@@ -44,16 +40,14 @@ xmlns:layout="http://ultraq.net.nz/thymeleaf/Layout" >
     </nav>
   </header>
 
-  <section layout:fragment="content"></section>
 
-  <footer>
-    <div class="fixed-bottom">
-      <small class="text-warning">HEI</small>
-    </div>
-  </footer>
-
+  
 </body>
-<script src="../static/js/bootstrap.min.js" th:href="@{js/bootstrap.min.js}"></script>
-<script src="../static/js/bootstrap.bundle.min.js" th:href="@{js/bootstrap.bundle.min.js}"></script>
-<script src="../static/js/jquery-3.6.1.min.js" th:href="@{js/jquery-3.6.1.min.js}"></script>
+
+  <div th:fragment="script">
+    <script src="../static/js/bootstrap.min.js" th:href="@{js/bootstrap.min.js}"></script>
+    <script src="../static/js/bootstrap.bundle.min.js" th:href="@{js/bootstrap.bundle.min.js}"></script>
+    <script src="../static/js/jquery-3.6.1.min.js" th:href="@{js/jquery-3.6.1.min.js}"></script>
+
+  </div>
 </html>

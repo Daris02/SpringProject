@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" xmlns:layout="http://ultraq.net.nz/thymeleaf/Layout" layout:decorator="index">
+
+    <head th:replace="index :: html_header" ></head>
+
+<body >
+    <header th:replace="index :: header"></header>
+
+    <div class="container " >
+        <div id="card" class="card bg-secondary ml-2 mr-2">
+          <div class="card-header">
+            <h3 class=" text-warning bg-opacity-50 mt-5"> List Student </h3>
+          </div>
+          <div class="card-body">
+            <div class="container">
+              <form th:action="@{/student}" method="get">
+                <input type="text" name="studentSearch">
+                <button type="submit" class="btn btn-secondary"> Search </button>
+              </form>
+            </div>
+            <table class="table table-dark table-striped ml-5 mr-5 my-5">
+              <thead class="text-warning">
+                <tr>
+                    <td>First Name </td>
+                    <td>Last Name</td>
+                    <td>Gender</td>
+                    <td>Email</td>
+                    <td>Groupe</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr th:each="student:${listStudent}">
+                  <td th:text="${student.firstName}"></td>
+                  <td th:text="${student.lastName}"></td>
+                  <td th:text="${student.gender}"></td>
+                  <td th:text="${student.email}"></td>
+                  <td th:text="${student.groups.name}"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer">
+            <div class="">
+              <ul class="nav nav-pills justify-content-center ">
+                <li class="nav-item " th:classappend="${status.index == pageCourantStudent} ? 'active' : '' "
+                  th:each="s,status:${pageStudents}">
+                  <a class="nav-link text-warning" th:href="@{/student(page=${status.index},studentSearch=${studentSearch})}"
+                    th:text="${status.index}"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+
+</body>
+    <script th:replace="index :: script"></script>
+</html>
