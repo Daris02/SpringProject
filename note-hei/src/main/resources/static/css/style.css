@@ -1,3 +1,12 @@
 body{
     background-color: rgba(210, 210, 210, 0.702);
 }
+
+nav {
+    opacity: 0.9;
+}
+
+#card {
+    margin: 10vh 3vw 5vh 3vw;
+
+}
