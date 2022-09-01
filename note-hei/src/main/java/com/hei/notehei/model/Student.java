@@ -9,7 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 @EqualsAndHashCode
-@Entity
+@Entity(name = "students")
 @Table(name = "STUDENTS")
 public class Student implements Serializable{
     @Id
@@ -30,6 +30,6 @@ public class Student implements Serializable{
 
     @ManyToOne
     @JoinColumn(name = "groups")
-    private Group groups;
+    private Groups groups;
     
 }

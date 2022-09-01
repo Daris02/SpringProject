@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
 
-import com.hei.notehei.model.Group;
+import com.hei.notehei.model.Groups;
 import com.hei.notehei.repository.GroupRepository;
 
 @Service
@@ -17,15 +17,15 @@ public class GroupService {
     @Autowired
     private GroupRepository groupRepository;
 
-    public List<Group> getAllGroups(){
+    public List<Groups> getAllGroups(){
         return groupRepository.findAll(); 
     }
 
-    public Optional<Group> getGroup(Long idGroup){
+    public Optional<Groups> getGroup(Long idGroup){
         return groupRepository.findById(idGroup);
     }
 
-    public Group addGroup(Group group){
+    public Groups addGroup(Groups group){
         return groupRepository.save(group);
     }
 

@@ -12,14 +12,14 @@ import lombok.*;
 @Setter
 @ToString
 @EqualsAndHashCode
-@Entity
+@Entity(name = "groups")
 @Table(name = "GROUPS")
-public class Group implements Serializable{
+public class Groups implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idGroup;
 
-    @Column(nullable = false, length = 2)
+    @Column(nullable = false, length = 10)
     private String name;
 
     @Column( length = 50)
