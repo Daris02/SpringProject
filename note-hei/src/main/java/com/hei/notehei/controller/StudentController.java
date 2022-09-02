@@ -32,4 +32,10 @@ public class StudentController {
         return "student";
     }
 
+    @GetMapping("/addStudent")
+    public String addObject(Model model){
+        model.addAttribute("newStudent", new Student());
+        return "addStudent";
+    }
+
 }

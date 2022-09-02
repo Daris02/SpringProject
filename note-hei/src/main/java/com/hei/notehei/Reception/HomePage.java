@@ -1,7 +1,6 @@
 package com.hei.notehei.Reception;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.AllArgsConstructor;
@@ -11,13 +10,12 @@ import lombok.AllArgsConstructor;
 public class HomePage {
 
     @GetMapping
-    public String getHome(Model model){
+    public String getHome(){
         return "index" ;
     }
 
     @GetMapping("/index")
-    public String getHomePage(Model model){
+    public String getHomePage(){
         return "index" ;
     }
-
 }
