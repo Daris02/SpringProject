@@ -40,7 +40,6 @@
             </table>
           </div>
           <div class="card-footer">
-            <div class="">
               <ul class="nav nav-pills justify-content-center ">
                 <li class="nav-item " th:classappend="${status.index == pageCourantStudent} ? 'active' : '' "
                   th:each="s,status:${pageStudents}">
@@ -48,7 +47,6 @@
                     th:text="${status.index}"></a>
                 </li>
               </ul>
-            </div>
           </div>
         </div>
     </div>
