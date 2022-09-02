@@ -6,33 +6,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>View</title>
-  <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}">
   <link rel="stylesheet" href="../static/css/style.css" th:href="@{css/style.css}">
+  <!-- Link CDN Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" 
+    crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" 
+    crossorigin="anonymous"></script>
+
 </head>
 
 <body>
   <header th:fragment="header">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top ">
+    <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <div class="collapse navbar-collapse " id="navbarNav">
-          <ul class="navbar-nav col justify-content-around">
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll " style="--bs-scroll-height: 100px;">
             <li class="nav-item">
-              <a class="nav-link text-warning" th:href="@{/index}">Home</a>
+              <a class="nav-link " th:href="@{/index}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" th:href="@{/student}">Student</a>
+              <a class="nav-link " th:href="@{/student}">Student</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" th:href="@{/groupe}">Group</a>
+              <a class="nav-link " th:href="@{/groupe}">Group</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Add
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" th:href="@{/addStudent}">Student</a></li>
+                <li><a class="dropdown-item" th:href="@{/addExamen}">Examen</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" th:href="@{/subject}">Subject</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-warning" th:href="@{/examen}">Examen</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-warning disabled">Grade</a>
+              <a class="nav-link  disabled">Grade</a>
             </li>
           </ul>
         </div>
@@ -40,14 +52,6 @@
     </nav>
   </header>
 
-
-  
 </body>
 
-  <div th:fragment="script">
-    <script src="../static/js/bootstrap.min.js" th:href="@{js/bootstrap.min.js}"></script>
-    <script src="../static/js/bootstrap.bundle.min.js" th:href="@{js/bootstrap.bundle.min.js}"></script>
-    <script src="../static/js/jquery-3.6.1.min.js" th:href="@{js/jquery-3.6.1.min.js}"></script>
-
-  </div>
 </html>

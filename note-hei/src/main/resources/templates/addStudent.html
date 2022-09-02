@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+
+<head th:replace="index :: html_header"></head>
+
+<body>
+    <div th:replace="index :: header"></div>
+
+    <div class="container col-md-6 col-sm-6 col-xs-12">
+
+        <div id="card" class="card bg-secondary ml-2 mr-2">
+            <div class="card-header ">
+                <h3 class=" text-warning bg-opacity-50 mt-5"> Add Student </h3>
+            </div>
+            <div class="card-body">
+                <form th:action="@{saveStudent}" method="post">
+
+                    <div class="form-group">
+                        <label class="control-label">First Name :</label>
+                        <input type="text" name="firstName" class="form-control"
+                        th:value="${newStudent.firstName}">
+                        <span></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Last Name :</label>
+                        <input type="text" name="lastName" class="form-control"
+                        th:value="${newStudent.lastName}">
+                        <span></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Email :</label>
+                        <input type="text" name="email" class="form-control"
+                        th:value="${newStudent.email}">
+                        <span></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Gender :</label>
+                        <input type="text" name="gender" class="form-control"
+                        th:value="${newStudent.gender}">
+                        <span></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Group (id) :</label>
+                        <input type="text" name="groups" class="form-control"
+                        th:value="${newStudent.groups}">
+                        <span></span>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn btn-secondary text-warning" type="submit">Save Student</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<div th:replace="index :: script"></div>
+
+</html>
