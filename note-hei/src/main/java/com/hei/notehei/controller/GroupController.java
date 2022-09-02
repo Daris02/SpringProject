@@ -29,6 +29,7 @@ public class GroupController {
         model.addAttribute("pages", pages);
         model.addAttribute("pageCourant", p);
         model.addAttribute("wordSearch", wordSearch);
+        
         return "groupe";
     }
     
