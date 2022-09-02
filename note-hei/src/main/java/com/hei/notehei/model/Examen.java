@@ -11,8 +11,8 @@ import lombok.*;
 @Getter
 @Setter
 @EqualsAndHashCode
-@Entity
-@Table(name = "EXAMENS")
+@Entity(name = "examen")
+@Table(name = "EXAMEN")
 public class Examen implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

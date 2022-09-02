@@ -10,7 +10,7 @@ import lombok.*;
 @Getter
 @Setter
 @EqualsAndHashCode
-@Entity
+@Entity(name = "subjects")
 @Table(name = "SUBJECTS")
 public class Subject implements Serializable {
     @Id

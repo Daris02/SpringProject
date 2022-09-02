@@ -11,7 +11,7 @@ import lombok.*;
 @Getter
 @Setter
 @EqualsAndHashCode
-@Entity
+@Entity(name = "grades")
 @Table(name = "GRADES")
 public class Grade implements Serializable {
     @Id
