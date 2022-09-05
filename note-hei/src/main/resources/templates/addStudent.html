@@ -7,56 +7,46 @@
     <div th:replace="index :: header"></div>
 
     <div class="container col-md-6 col-sm-6 col-xs-12">
+        <form th:action="@{saveStudent}" th:object="${student}" method="post" class="text-dark">
+            <h3 class=" text-warning bg-opacity-50 mt-5"> Add Student </h3>
+            <div class="form-group">
+                <label class="control-label">First Name :</label>
+                <input type="text" name="firstName" class="form-control" th:value="${student.firstName}"
+                    placeholder="Your first name">
+                <span class="text-danger" th:errors="${student.firstName}"></span>
+            </div><br>
 
-        <div id="card" class="card bg-secondary ml-2 mr-2">
-            <div class="card-header ">
-                <h3 class=" text-warning bg-opacity-50 mt-5"> Add Student </h3>
+            <div class="form-group">
+                <label class="control-label">Last Name :</label>
+                <input type="text" name="lastName" class="form-control" th:value="${student.lastName}"
+                    placeholder="Your last name">
+                <span class="text-danger" th:errors="${student.lastName}"></span>
+            </div><br>
+
+            <div class="form-group">
+                <label class="control-label">Email :</label>
+                <input type="text" name="email" class="form-control" th:value="${student.email}"
+                    placeholder="Your email">
+                <span class="text-danger" th:errors="${student.email}"></span>
+            </div><br>
+
+            <div class="form-group">
+                <label class="control-label">Gender :</label>
+                <input type="text" name="gender" class="form-control" th:value="${student.gender}"
+                    placeholder="Your sex (example : M or F )">
+                <span class="text-danger" th:errors="${student.gender}"></span>
+            </div><br>
+
+            <div class="form-group">
+                <label class="control-label">Group (id) :</label>
+                <input type="text" name="groups" class="form-control" th:value="${student.groups}"
+                    placeholder="Your idGroup ( 1 or 2 or 3 ) ">
+                <span class="text-danger" th:errors="${student.groups}"></span>
             </div>
-            <div class="card-body">
-                <form th:action="@{saveStudent}" method="post">
-
-                    <div class="form-group">
-                        <label class="control-label">First Name :</label>
-                        <input type="text" name="firstName" class="form-control"
-                        th:value="${newStudent.firstName}">
-                        <span></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label">Last Name :</label>
-                        <input type="text" name="lastName" class="form-control"
-                        th:value="${newStudent.lastName}">
-                        <span></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label">Email :</label>
-                        <input type="text" name="email" class="form-control"
-                        th:value="${newStudent.email}">
-                        <span></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label">Gender :</label>
-                        <input type="text" name="gender" class="form-control"
-                        th:value="${newStudent.gender}">
-                        <span></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label">Group (id) :</label>
-                        <input type="text" name="groups" class="form-control"
-                        th:value="${newStudent.groups}">
-                        <span></span>
-                    </div>
-
-                </form>
-
+            <div class="text-center">
+                <button class="btn text-warning mt-2" type="submit">Save Student</button>
             </div>
-            <div class="card-footer text-center">
-                <button class="btn btn-secondary text-warning" type="submit">Save Student</button>
-            </div>
-        </div>
+        </form>
 
     </div>
 

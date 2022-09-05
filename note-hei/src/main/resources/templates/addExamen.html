@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+
+<head th:replace="index :: html_header"></head>
+
+<body>
+    <div th:replace="index :: header"></div>
+
+    <div class="container col-md-6 col-sm-6 col-xs-12">
+
+        <div id="card" class="card bg-secondary ml-2 mr-2 mt-5">
+            <div class="card-header">
+                <h3 class=" text-warning bg-opacity-50 mt-5"> Add Examen </h3>
+            </div>
+            <div class="card-body text-white">
+                <form th:action="@{saveStudent}" method="post">
+
+                    <div class="form-group">
+                        <label class="control-label">Title :</label>
+                        <input type="text" name="firstName" class="form-control"
+                        th:value="${newStudent.firstName}" placeholder="title of exam">
+                        <span></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Date of Examen :</label>
+                        <input type="text" name="lastName" class="form-control"
+                        th:value="${newStudent.lastName}" placeholder="date of exam">
+                        <span></span>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn text-warning" type="submit">SaveExamen</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<div th:replace="index :: script"></div>
+
+</html>

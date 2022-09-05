@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+
+<head th:replace="index :: html_header"></head>
+
+<body>
+  <div th:replace="index :: header"></div>
+
+  <div class="container">
+    <div class="container">
+      <form th:action="@{/student}" method="get">
+        <input type="text" name="wordSearch">
+        <button type="submit" class="btn btn-secondary"> Search </button>
+      </form>
+    </div>
+    <table class="table table-dark table-striped ml-5 mr-5 my-5">
+      <thead>
+        <tr class="text-warning">
+          <td>First Name </td>
+          <td>Last Name</td>
+          <td>Gender</td>
+          <td>Email</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="gr:${studentIG}">
+          <td th:text="${gr.firstName}"></td>
+          <td th:text="${gr.lastName}"></td>
+          <td th:text="${gr.Gender}"></td>
+          <td th:text="${gr.email}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</body>
+
+</html>

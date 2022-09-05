@@ -23,12 +23,16 @@
               <tr class="text-warning">
                 <td>Group </td>
                 <td>Name</td>
+                <td> </td>
               </tr>
             </thead>
             <tbody>
               <tr th:each="groupe:${listGroupe}">
                 <td th:text="${groupe.name}"></td>
                 <td th:text="${groupe.groupe}"></td>
+                <td>
+                  <a th:href="@{studentIG(idGroup=${groupe.idGroup})}" class="text-warning" style="text-decoration: none;"> student </a>
+                </td>
               </tr>
             </tbody>
           </table>

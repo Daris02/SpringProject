@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="https://thymeleaf.org" xmlns:layout="http://ultraq.net.nz/thymeleaf/Layout" layout:decorator="index">
+<html xmlns:th="https://thymeleaf.org" >
 
     <head th:replace="index :: html_header" ></head>
 
@@ -18,7 +18,7 @@
                 <button type="submit" class="btn btn-secondary"> Search </button>
               </form>
             </div>
-            <table class="table table-dark table-striped ml-5 mr-5 my-5">
+            <table class="table table-dark table-striped ml-5 mr-5">
               <thead class="text-warning">
                 <tr>
                     <td>First Name </td>
@@ -26,6 +26,8 @@
                     <td>Gender</td>
                     <td>Email</td>
                     <td>Groupe</td>
+                    <td> </td>
+                    <td> </td>
                 </tr>
               </thead>
               <tbody>
@@ -35,6 +37,13 @@
                   <td th:text="${student.gender}"></td>
                   <td th:text="${student.email}"></td>
                   <td th:text="${student.groups.name}"></td>
+                  <td>grade
+                    <!--<a th:href="@{/grade(idGrade=${grade.idGrade})}" class="text-warning" style="text-decoration: none;"> Grade </a>-->
+                  </td>
+                  <td>
+                    <a th:href="@{deleteStudent(idStudent=${student.idStudent},page=${pageCourantStudent},size=${size},studentSearch=${studentSearch})}" 
+                    class="text-danger" style="text-decoration: none;"> delete </a>
+                  </td>
                 </tr>
               </tbody>
             </table>
