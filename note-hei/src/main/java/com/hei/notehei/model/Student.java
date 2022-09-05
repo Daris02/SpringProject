@@ -17,19 +17,23 @@ public class Student implements Serializable{
     private Long idStudent;
 
     @Column(nullable = false, length = 100)
+    @NonNull
     private String firstName;
 
     @Column(nullable = false, length = 100)
+    @NonNull
     private String lastName;
 
     @Column(nullable = false, length = 150)
+    @NonNull
     private String email;
 
-    @Column(nullable = false, length = 1)
+    @Column(length = 1)
     private char gender;
 
     @ManyToOne
     @JoinColumn(name = "groups")
+    @NonNull
     private Groups groups;
     
 }
