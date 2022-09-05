@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hei.notehei.model.Groups;
 import com.hei.notehei.repository.GroupRepository;
+import com.hei.notehei.repository.StudentRepository;
 
 @Controller
 public class GroupController {
     @Autowired
     private GroupRepository groupRepository;
+
+    @Autowired
+    private StudentRepository studentRepository;
 
     @GetMapping("/groupe")
     public String getGroupePage(Model model, 
@@ -33,4 +37,11 @@ public class GroupController {
         return "groupe";
     }
     
+    @GetMapping("/studentIG")
+    public String studentInG(Model model,Long idGroup){
+        Groups g = new Groups();
+        g.setIdGroup(idGroup);
+        model.addAttribute("studentIG", studentRepository.findByGroups(g));
+        return "studentIG";
+    }
 }

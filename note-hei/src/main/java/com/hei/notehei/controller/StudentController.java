@@ -5,7 +5,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hei.notehei.model.Student;
@@ -33,9 +36,24 @@ public class StudentController {
     }
 
     @GetMapping("/addStudent")
-    public String addObject(Model model){
-        model.addAttribute("newStudent", new Student());
+    public String addStudent(Model model){
+        model.addAttribute("student", new Student());
         return "addStudent";
+    }
+
+    @PostMapping("/saveStudent")
+    public String saveStudent(Model model,@Validated Student student,BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "addStudent";
+        }
+        studentRepository.save(student);
+        return "redirect:/student";
+    }
+
+    @GetMapping("/deleteStudent")
+    public String deleteStudent(Long idStudent){
+        studentRepository.deleteById(idStudent);
+        return "redirect:/student";
     }
 
 }
