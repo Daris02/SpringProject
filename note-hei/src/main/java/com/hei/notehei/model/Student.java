@@ -29,7 +29,7 @@ public class Student implements Serializable{
     private String email;
 
     @Column(length = 1)
-    private char gender;
+    private Character gender;
 
     @ManyToOne
     @JoinColumn(name = "groups")
