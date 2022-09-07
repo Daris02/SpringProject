@@ -18,19 +18,23 @@ public class Grade implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idGrade;
 
-    @Column(nullable = false)
-    private double average;
+    @Column
+    @NonNull
+    private Double average;
 
     @ManyToOne
     @JoinColumn(name = "student")
+    @NonNull
     private Student student;
     
     @ManyToOne
     @JoinColumn(name = "subject")
+    @NonNull
     private Subject subject;
 
     @ManyToOne
     @JoinColumn(name = "examen")
+    @NonNull
     private Examen examen; 
 
 }

@@ -1,6 +1,8 @@
 package com.hei.notehei.model;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 import lombok.*;
 
@@ -32,8 +34,12 @@ public class Student implements Serializable{
     private Character gender;
 
     @ManyToOne
-    @JoinColumn(name = "groups")
+    @JoinColumn(name = "groupes")
     @NonNull
-    private Groups groups;
+    private Groups groupes;
+
+    @Transient
+    @OneToMany(mappedBy = "student")
+    private List<Grade> grade;
     
 }

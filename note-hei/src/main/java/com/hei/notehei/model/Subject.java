@@ -1,8 +1,10 @@
 package com.hei.notehei.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.*;
+
 import lombok.*;
 
 @AllArgsConstructor
@@ -17,7 +19,11 @@ public class Subject implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idSubject;
 
-    @Column(nullable = false, length = 50)
+    @Column(length = 50)
+    @NonNull
     private String name;
     
+    @Transient
+    @OneToMany(mappedBy = "subject")
+    private List<Grade> grade;
 }

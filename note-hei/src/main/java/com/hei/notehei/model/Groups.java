@@ -12,8 +12,8 @@ import lombok.*;
 @Setter
 @ToString
 @EqualsAndHashCode
-@Entity(name = "groups")
-@Table(name = "GROUPS")
+@Entity(name = "groupes")
+@Table(name = "GROUPES")
 public class Groups implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class Groups implements Serializable{
     private String groupe;
 
     @Transient
-    @OneToMany(mappedBy = "groups")
+    @OneToMany(mappedBy = "groupes")
     private List<Student> student;
     
 }
