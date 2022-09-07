@@ -7,7 +7,7 @@
   <div th:replace="index :: header"></div>
 
   <div class="container" >
-      <div id="card" class="card bg-secondary ml-2 mr-2">
+      <div id="card" class="card border-secondary ml-2 mr-2">
         <div class="card-header">
           <h3 class=" text-warning bg-opacity-50 mt-5"> List Group </h3>
         </div>
@@ -15,10 +15,10 @@
           <div class="container">
             <form th:action="@{/groupe}" method="get">
               <input type="text" name="wordSearch">
-              <button type="submit" class="btn btn-secondary"> Search </button>
+              <button type="submit" class="btn btn-secondary p-1"> Search </button>
             </form>
           </div>
-          <table class="table table-dark table-striped ml-5 mr-5 my-5">
+          <table class="table table-light table-striped ml-5 mr-5 my-5">
             <thead>
               <tr class="text-warning">
                 <td>Group </td>
@@ -31,7 +31,8 @@
                 <td th:text="${groupe.name}"></td>
                 <td th:text="${groupe.groupe}"></td>
                 <td>
-                  <a th:href="@{studentIG(idGroup=${groupe.idGroup})}" class="text-warning" style="text-decoration: none;"> student </a>
+                  <a th:href="@{studentIG(idGroup=${groupe.idGroup})}" class="text-warning" 
+                  style="text-decoration: none;"> student </a>
                 </td>
               </tr>
             </tbody>

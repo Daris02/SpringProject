@@ -7,13 +7,13 @@
   <div th:replace="index :: header"></div>
 
   <div class="container">
-    <div class="container">
+    <div class="container mt-5">
       <form th:action="@{/student}" method="get">
         <input type="text" name="wordSearch">
-        <button type="submit" class="btn btn-secondary"> Search </button>
+        <button type="submit" class="btn btn-secondary p-1"> Search </button>
       </form>
     </div>
-    <table class="table table-dark table-striped ml-5 mr-5 my-5">
+    <table class="table table-light table-striped ml-5 mr-5 my-5">
       <thead>
         <tr class="text-warning">
           <td>First Name </td>
