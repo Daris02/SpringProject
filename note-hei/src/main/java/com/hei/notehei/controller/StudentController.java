@@ -12,12 +12,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hei.notehei.model.Student;
+import com.hei.notehei.repository.GradeRepository;
 import com.hei.notehei.repository.StudentRepository;
 
 @Controller
 public class StudentController {
     @Autowired
     private StudentRepository studentRepository;
+
+    @Autowired
+    private GradeRepository gradeRepository;
     
     @GetMapping("/student")
     public String getStudentPage(Model model, 
@@ -54,6 +58,14 @@ public class StudentController {
     public String deleteStudent(Long idStudent){
         studentRepository.deleteById(idStudent);
         return "redirect:/student";
+    }
+
+    @GetMapping("/gradeOS")
+    public String studentInG(Model model,Long idStudent){
+        Student s = new Student();
+        s.setIdStudent(idStudent);
+        model.addAttribute("gradeOS", gradeRepository.findByStudent(s));
+        return "gradeOS";
     }
 
 }

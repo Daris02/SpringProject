@@ -23,7 +23,7 @@ public class SubjectController {
         @RequestParam(name = "size",defaultValue ="5") Integer s){
 
         Page<Subject> pageSubject = subjectRepository.search("%"+subjectSearch+"%",PageRequest.of(p, s));
-        model.addAttribute("listGroupe", pageSubject.getContent());
+        model.addAttribute("listSubject", pageSubject.getContent());
 
         Integer[] pagesSubject = new Integer[pageSubject.getTotalPages()];
         model.addAttribute("pagesSubject", pagesSubject);
