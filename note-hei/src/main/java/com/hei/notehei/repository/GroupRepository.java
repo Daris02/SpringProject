@@ -10,7 +10,7 @@ import com.hei.notehei.model.Groups;
 
 public interface GroupRepository extends JpaRepository<Groups, Long>{
 
-    @Query("select g from groups g where upper(g.name) like upper(:x) ")
+    @Query("select g from groupes g where upper(g.name) like upper(:x) ")
     Page<Groups> search(@Param("x") String g, Pageable pageable);
 
 }

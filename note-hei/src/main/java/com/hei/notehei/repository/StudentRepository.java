@@ -21,5 +21,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     "order by firstName ")
     Page<Student> search(@Param("x") String s, Pageable pageable);
 
-    List<Student> findByGroups(Groups g);
+    List<Student> findByGroupes(Groups g);
+
 }
