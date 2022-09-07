@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" >
+
+  <head th:replace="index :: html_header" ></head>
+
+<body>
+  <div th:replace="index :: header"></div>
+
+  <div class="container" >
+      <div id="card" class="card border-secondary ml-2 mr-2">
+        <div class="card-header">
+          <h3 class=" text-warning bg-opacity-50 mt-5"> List Examen </h3>
+        </div>
+        <div class="card-body">
+          <div class="container">
+            <form th:action="@{/examen}" method="get">
+              <input type="text" name="examenSearch">
+              <button type="submit" class="btn bg-secondary text-light p-1"> Search </button>
+            </form>
+          </div>
+          <table class="table table-light table-striped ml-5 mr-5 my-5">
+            <thead>
+              <tr class="text-warning">
+                <td>Title</td>
+                <td>Date</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="examen:${listExamen}">
+                <td th:text="${examen.title}"></td>
+                <td th:date="${examen.date_exam}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer" >
+          <div class="">
+            <ul class="nav nav-pills justify-content-center ">
+              <li class="nav-item " th:classappend="${status.index == pageCourantExamen} ? 'active' : '' "
+                th:each="p,status:${pagesExamen}">
+                <a class="nav-link text-warning" th:href="@{/examen(page=${status.index},examenSearch=${examenSearch})}"
+                  th:text="${status.index}"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+</body>
+  <div th:replace="index :: script"></div>
+</html>

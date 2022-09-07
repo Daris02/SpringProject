@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+
+<head th:replace="index :: html_header"></head>
+
+<body>
+  <div th:replace="index :: header"></div>
+
+  <div class="container">
+    <table class="table table-dark table-striped ml-5 mr-5 my-5">
+      <thead>
+        <tr class="text-warning">
+          <td>First Name </td>
+          <td>Last Name</td>
+          <td>Gender</td>
+          <td>Email</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="grade:${gradeOS}">
+          <td th:text="${grade.firstName}"></td>
+          <td th:text="${grade.lastName}"></td>
+          <td th:text="${grade.Gender}"></td>
+          <td th:text="${grade.email}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</body>
+
+</html>

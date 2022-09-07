@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" >
+
+  <head th:replace="index :: html_header" ></head>
+
+<body>
+  <div th:replace="index :: header"></div>
+
+  <div class="container" >
+      <div id="card" class="card border-secondary ml-2 mr-2">
+        <div class="card-header">
+          <h3 class=" text-warning bg-opacity-50 mt-5"> List Subject </h3>
+        </div>
+        <div class="card-body">
+          <div class="container">
+            <form th:action="@{/subject}" method="get">
+              <input type="text" name="subjectSearch">
+              <button type="submit" class="btn btn-secondary p-1"> Search </button>
+            </form>
+          </div>
+          <table class="table table-light table-striped  text-center ml-5 mr-5 my-5">
+            <thead>
+              <tr class="text-warning">
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="subject:${listSubject}">
+                <td th:text="${subject.name}"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer" >
+          <div class="">
+            <ul class="nav nav-pills justify-content-center ">
+              <li class="nav-item " th:classappend="${status.index == pageCourantSubject} ? 'active' : '' "
+                th:each="p,status:${pagesSubject}">
+                <a class="nav-link text-warning" th:href="@{/subject(page=${status.index},subjectSearch=${subjectSearch})}"
+                  th:text="${status.index}"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+</body>
+  <div th:replace="index :: script"></div>
+</html>
