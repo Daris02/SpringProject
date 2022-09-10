@@ -65,7 +65,7 @@ public class StudentController {
         Student s = new Student();
         s.setIdStudent(idStudent);
         model.addAttribute("gradeOS", gradeRepository.findByStudent(s));
-        return "gradeOS";
+        return "rateOfStudent";
     }
 
 }
