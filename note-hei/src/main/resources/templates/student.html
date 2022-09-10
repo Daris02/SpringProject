@@ -37,11 +37,9 @@
                   <td th:text="${student.gender}"></td>
                   <td th:text="${student.email}"></td>
                   <td th:text="${student.groupes.name}"></td>
-                  <td>grade
-                    <!--
-                      <a th:href="@{grade(idStudent=${grade.idStudent})}" class="text-warning"
-                      style="text-decoration: none;"> Grade </a>
-                    -->
+                  <td>
+                      <a th:href="@{gradeOS(idStudent=${student.idStudent})}" class="text-warning"
+                      style="text-decoration: none;"> grade </a>
                   </td>
                   <td>
                     <a th:href="@{deleteStudent(idStudent=${student.idStudent},page=${pageCourantStudent},size=${size},studentSearch=${studentSearch})}" 

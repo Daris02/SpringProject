@@ -6,22 +6,24 @@
 <body>
   <div th:replace="index :: header"></div>
 
+  <div th:object="${gradeOS.student}">
+    <h5 class="text-warning" th:htext="*{firstName}"></h5>
+  </div>
+
   <div class="container">
-    <table class="table table-dark table-striped ml-5 mr-5 my-5">
+    <table class="table table-striped ml-5 mr-5 my-5">
       <thead>
         <tr class="text-warning">
-          <td>First Name </td>
-          <td>Last Name</td>
-          <td>Gender</td>
-          <td>Email</td>
+          <td>Average</td>
+          <td>Subject</td>
+          <td>Examen</td>
         </tr>
       </thead>
       <tbody>
-        <tr th:each="grade:${gradeOS}">
-          <td th:text="${grade.firstName}"></td>
-          <td th:text="${grade.lastName}"></td>
-          <td th:text="${grade.Gender}"></td>
-          <td th:text="${grade.email}"></td>
+        <tr th:each="${gradeOS}">
+          <td th:text="${grade.average}"></td>
+          <td th:text="${grade.subject.name}"></td>
+          <td th:text="${grade.examen.title}"></td>
         </tr>
       </tbody>
     </table>
