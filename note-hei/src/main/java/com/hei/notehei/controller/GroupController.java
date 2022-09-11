@@ -42,6 +42,7 @@ public class GroupController {
         Groups g = new Groups();
         g.setIdGroup(idGroup);
         model.addAttribute("studentIG", studentRepository.findByGroupes(g));
+        model.addAttribute("nameG", g.getIdGroup());
         return "studentIG";
     }
     

@@ -8,6 +8,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.hei.notehei.model.Examen;
 import com.hei.notehei.model.Grade;
 import com.hei.notehei.model.Student;
 import com.hei.notehei.repository.GradeRepository;
@@ -20,14 +21,27 @@ public class GradeController {
 
     @Autowired
     private StudentRepository studentRepository;
+
+    @Autowired
+    private Examen examenRepository;
+
+    @GetMapping("/gradeOS")
+    public String studentInG(Model model,Long idStudent){
+        Student student = studentRepository.getStudentById(idStudent);
+
+        model.addAttribute("gradeOS", gradeRepository.gradeOfStudent(idStudent));
+        model.addAttribute("student", student);
+
+        return "rateOfStudent";
+    }
     
-    @PostMapping("/rateOfStudent")
+    @PostMapping("/rateOS")
     public String gradeStudent(Model model,@Validated Grade grade,BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "rateStudent";
         }
         gradeRepository.save(grade);
-        return "redirect:/rateOftudent";
+        return "redirect:/rateOS";
     }
 
     @GetMapping("/grade")
