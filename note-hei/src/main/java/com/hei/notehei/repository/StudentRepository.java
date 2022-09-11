@@ -23,4 +23,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     List<Student> findByGroupes(Groups g);
 
+    @Query("select s from students s where id_student = :x ")
+    Student getStudentById(@Param("x") Long idStudent);
+
 }
