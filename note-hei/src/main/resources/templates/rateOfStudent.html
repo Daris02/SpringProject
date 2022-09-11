@@ -4,10 +4,18 @@
 <head th:replace="index :: html_header"></head>
 
 <body>
+
   <div th:replace="index :: header"></div>
 
-  <div th:object="${gradeOS.student}">
-    <h5 class="text-warning" th:htext="*{firstName}"></h5>
+  <div class="container mt-3" >
+    <h5 class="text-secondary" th:text="${student.lastName} + ' ' + ${student.firstName}"></h5>
+  </div>
+
+  <div class="card mx-5" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"> Moyenne </h5>
+      <h6 class="card-subtitle mb-2 text-muted"> "here" </h6>
+    </div>
   </div>
 
   <div class="container">
@@ -20,7 +28,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr th:each="${gradeOS}">
+        <tr th:each="grade:${gradeOS}">
           <td th:text="${grade.average}"></td>
           <td th:text="${grade.subject.name}"></td>
           <td th:text="${grade.examen.title}"></td>
@@ -28,7 +36,6 @@
       </tbody>
     </table>
   </div>
-
 
 </body>
 

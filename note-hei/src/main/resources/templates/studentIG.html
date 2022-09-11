@@ -7,6 +7,8 @@
   <div th:replace="index :: header"></div>
 
   <div class="container">
+    <h4 class="text-warning mt-3" th:utext=" 'G' + ${nameG} "></h4>
+    <h4 class="text-warning mt-3" th:text=" ${nameGroup} "></h4>
     <div class="container mt-5">
       <form th:action="@{/student}" method="get">
         <input type="text" name="wordSearch">
@@ -23,11 +25,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr th:each="gr:${studentIG}">
-          <td th:text="${gr.firstName}"></td>
-          <td th:text="${gr.lastName}"></td>
-          <td th:text="${gr.Gender}"></td>
-          <td th:text="${gr.email}"></td>
+        <tr th:each="groupe:${studentIG}">
+          <td th:text="${groupe.firstName}"></td>
+          <td th:text="${groupe.lastName}"></td>
+          <td th:text="${groupe.Gender}"></td>
+          <td th:text="${groupe.email}"></td>
         </tr>
       </tbody>
     </table>
