@@ -11,6 +11,7 @@ import lombok.*;
 @Getter
 @Setter
 @EqualsAndHashCode
+@ToString
 @Entity(name = "students")
 @Table(name = "STUDENTS")
 public class Student implements Serializable{
@@ -39,7 +40,7 @@ public class Student implements Serializable{
     private Groups groupes;
 
     @Transient
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "students")
     private List<Grade> grade;
     
 }

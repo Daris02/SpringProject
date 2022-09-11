@@ -10,6 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 @EqualsAndHashCode
 @Entity(name = "grades")
 @Table(name = "GRADES")
@@ -23,9 +24,9 @@ public class Grade implements Serializable {
     private Double average;
 
     @ManyToOne
-    @JoinColumn(name = "student")
+    @JoinColumn(name = "students")
     @NonNull
-    private Student student;
+    private Student students;
     
     @ManyToOne
     @JoinColumn(name = "subject")
