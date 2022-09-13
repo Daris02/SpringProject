@@ -2,7 +2,6 @@ package com.hei.notehei.repository;
 
 import org.springframework.stereotype.Repository;
 
-import com.hei.notehei.model.Examen;
 import com.hei.notehei.model.Grade;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,10 +19,7 @@ public interface GradeRepository extends JpaRepository<Grade, Long>{
     "    JOIN subjects b ON g.subject = b.idSubject "+
     "    JOIN examen e ON g.examen = e.idExamen "+
     "   WHERE s.idStudent = :x " )
-    List<Grade> gradeOfStudent(@Param("x") Long x); 
-
-    @Query
-    List<Examen> getExamen(@Param("e") Long e);
+    List<Grade> gradeOfStudent(@Param("x") Long x);
 
     List<Grade> findByStudents(Long x);
     
