@@ -826,7 +826,7 @@ components:
           example: M or F
         group:
           type: string
-          example: G3
+          example: 3
     Student:
       type: object
       properties:
@@ -878,12 +878,15 @@ components:
         average:
           type: number
           format: double
-        Student:
+        student:
           type: string
           example: Daris
         subject:
           type: string
           example: Base de données
+        examen:
+          type: string
+          example: final preview
     Grades:
       type: object
       properties:
@@ -895,10 +898,13 @@ components:
         average:
           type: number
           format: double
-        Student:
+        student:
           type: string
           example: Daris
-
+        examen:
+          type: string
+          example: final preview
+          
     CreateSubjects:
       type: object
       properties:
