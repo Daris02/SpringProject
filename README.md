@@ -4,8 +4,8 @@
 
 This repository is the final project in PROG2 and DONNEE2 whose theme is \'note des etudiant\'
 
-This project used Spring Boot :
-    - With PostgreSQL in DataBase
+### This project used Spring Boot :
+    - With PostgreSQL in DataBase 
     - With Thymeleaf in View or Front-End
 
 ## API
