@@ -20,10 +20,6 @@ import com.hei.notehei.repository.GroupRepository;
 @SpringBootApplication
 public class NoteHeiApplication implements CommandLineRunner {
 
-	public static void main(String[] args) {
-		SpringApplication.run(NoteHeiApplication.class, args);
-	}
-
 	@Autowired
 	private SubjectRepository subjectRepository;
 
@@ -35,6 +31,11 @@ public class NoteHeiApplication implements CommandLineRunner {
 
 	static List<Grade> grade;
 	static List<Student> student;
+
+	
+	public static void main(String[] args) {
+		SpringApplication.run(NoteHeiApplication.class, args);
+	}
 
 	@Override
 	public void run(String... args) throws Exception {
