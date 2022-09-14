@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
+import javax.validation.constraints.*;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -19,19 +21,24 @@ public class Student implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idStudent;
 
-    @Column(nullable = false, length = 100)
-    @NonNull
+    @Column(length = 100)
+    @NotEmpty(message = "First name is not empty")
+    @NotBlank(message = "First name is not blank")
     private String firstName;
 
-    @Column(nullable = false, length = 100)
-    @NonNull
+    @Column(length = 100)
+    @NotEmpty(message = "Last name is not empty")
+    @NotBlank(message = "Last name is not blank")
     private String lastName;
 
-    @Column(nullable = false, length = 150)
-    @NonNull
+    @Column(length = 150)
+    @NotEmpty(message = "Email is not empty")
+    @NotBlank(message = "Email name is not blank")
     private String email;
 
     @Column(length = 1)
+    @NotEmpty(message = "Gender is not empty")
+    @NotBlank(message = "Gender is not blank")
     private Character gender;
 
     @ManyToOne
