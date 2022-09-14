@@ -16,6 +16,8 @@ import com.hei.notehei.model.Student;
 import com.hei.notehei.repository.SubjectRepository;
 import com.hei.notehei.repository.ExamenRepository;
 import com.hei.notehei.repository.GroupRepository;
+import com.hei.notehei.repository.StudentRepository;
+import com.hei.notehei.repository.GradeRepository;
 
 @SpringBootApplication
 public class NoteHeiApplication implements CommandLineRunner {
@@ -28,6 +30,12 @@ public class NoteHeiApplication implements CommandLineRunner {
 
 	@Autowired
 	private GroupRepository groupRepository;
+	
+	@Autowired
+	private GradeRepository gradeRepository;
+
+	@Autowired
+	private StudentRepository studentRepository;
 
 	static List<Grade> grade;
 	static List<Student> student;
@@ -50,12 +58,16 @@ public class NoteHeiApplication implements CommandLineRunner {
 		subjectRepository.save(new Subject((long) 1, "PROG1", grade));
 		subjectRepository.save(new Subject((long) 2, "PROG2", grade));
 		subjectRepository.save(new Subject((long) 3, "WEB1", grade));
-		subjectRepository.save(new Subject((long) 4, "DONNEE2", grade));
-		subjectRepository.save(new Subject((long) 5, "EL1", grade));
+		subjectRepository.save(new Subject((long) 4, "THEORI1", grade));
+		subjectRepository.save(new Subject((long) 5, "DONNEE2", grade));
+		subjectRepository.save(new Subject((long) 6, "EL1", grade));
 
 		examenRepository.save(new Examen((long) 1, "Final Preview",
 							  new Date(2022-10-15), grade));
-
+		examenRepository.save(new Examen((long) 2, "Test",
+							  new Date(2022-11-10), grade));
+							  
+		
 	}
 
 }
