@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
+
 import javax.persistence.*;
 import lombok.*;
 
@@ -21,6 +25,8 @@ public class Examen implements Serializable {
     private Long idExamen;
 
     @Column(length = 50)
+    @NotEmpty(message = "Examen title is not empty")
+    @NotBlank(message = "Examen title is not blank")
     private String title;
 
     @Column     // CHECK DATE > new Date()

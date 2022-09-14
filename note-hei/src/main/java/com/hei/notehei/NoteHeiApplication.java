@@ -66,8 +66,6 @@ public class NoteHeiApplication implements CommandLineRunner {
 							  new Date(2022-10-15), grade));
 		examenRepository.save(new Examen((long) 2, "Test",
 							  new Date(2022-11-10), grade));
-							  
-		
 	}
 
 }
