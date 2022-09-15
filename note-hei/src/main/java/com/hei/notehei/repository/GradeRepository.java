@@ -21,6 +21,14 @@ public interface GradeRepository extends JpaRepository<Grade, Long>{
     "   WHERE s.idStudent = :x " )
     List<Grade> gradeOfStudent(@Param("x") Long x);
 
+    @Query("SELECT round(avg(g.average)) "+
+    " FROM grades g "+
+    "    JOIN students s ON g.students = s.idStudent "+
+    "    JOIN subjects b ON g.subject = b.idSubject "+
+    "    JOIN examen e ON g.examen = e.idExamen "+
+    "where s.idStudent = :x")
+    Double gradeExam(@Param("x") Long x);
+
     List<Grade> findByStudents(Long x);
     
 }

@@ -12,7 +12,6 @@ import com.hei.notehei.model.Grade;
 import com.hei.notehei.model.Student;
 import com.hei.notehei.repository.GradeRepository;
 import com.hei.notehei.repository.StudentRepository;
-import com.hei.notehei.repository.ExamenRepository;
 
 @Controller
 public class GradeController {
@@ -22,16 +21,13 @@ public class GradeController {
     @Autowired
     private StudentRepository studentRepository;
 
-    @Autowired
-    private ExamenRepository examenRepository;
-
     @GetMapping("/gradeOS")
     public String studentInG(Model model,Long idStudent){
         Student student = studentRepository.getStudentById(idStudent);
 
         model.addAttribute("gradeOS", gradeRepository.gradeOfStudent(idStudent));
         model.addAttribute("student", student);
-
+        model.addAttribute("gradeExam", gradeRepository.gradeExam(idStudent));
         return "rateOfStudent";
     }
     
