@@ -13,8 +13,9 @@
 
   <div class="card mx-5" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title"> Moyenne </h5>
-      <h6 class="card-subtitle mb-2 text-muted"> "here" </h6>
+      <h5 class="card-title" th:text=" 'Average Total : ' "> Moyenne </h5>
+      <h6 class="card-subtitle mb-2 text-muted" 
+        th:text="${gradeExam}">  </h6>
     </div>
   </div>
 
@@ -35,6 +36,10 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="container align-self-end">
+    <a th:href="@{/student}" class="btn btn-warning">Go back</a>
   </div>
 
 </body>
