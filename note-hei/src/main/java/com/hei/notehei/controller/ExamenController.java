@@ -29,7 +29,7 @@ public class ExamenController {
         model.addAttribute("pagesExamen", pagesExamen);
         model.addAttribute("pageCourantExamen", p);
         model.addAttribute("examenSearch", examenSearch);
-
+        // model.addAttribute("dateExam", examenRepository.getDateExam());
         return "examen" ;
     }
 }

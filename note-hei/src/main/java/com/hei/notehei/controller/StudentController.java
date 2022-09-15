@@ -32,6 +32,7 @@ public class StudentController {
         model.addAttribute("pageStudents", pageStudents);
         model.addAttribute("pageCourantStudent", p);
         model.addAttribute("studentSearch", studentSearch);
+        System.out.println(studentRepository.count());
         return "student";
     }
 
@@ -55,5 +56,4 @@ public class StudentController {
         studentRepository.deleteById(idStudent);
         return "redirect:/student";
     }
-
 }
