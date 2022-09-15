@@ -95,27 +95,66 @@ public class NoteHeiApplication implements CommandLineRunner {
 
 		gradeRepository.save(new Grade((long) 1, 12.0, s1, sub1, ex1));
 		gradeRepository.save(new Grade((long) 2, 18.0, s1, sub2, ex1));
-		gradeRepository.save(new Grade((long) 3, 7.5, s1, sub5, ex1));
+		gradeRepository.save(new Grade((long) 3, 7.5, s1, sub3, ex1));
+		gradeRepository.save(new Grade((long) 4, 17.5, s1, sub4, ex1));
+		gradeRepository.save(new Grade((long) 5, 10.0, s1, sub5, ex1));
+		gradeRepository.save(new Grade((long) 6, 8.5, s1, sub6, ex1));
 
-		gradeRepository.save(new Grade((long) 4, 15.0, s2, sub1, ex1));
-		gradeRepository.save(new Grade((long) 5, 13.0, s2, sub2, ex1));
-		gradeRepository.save(new Grade((long) 6, 12.5, s2, sub3, ex1));
+		gradeRepository.save(new Grade((long) 7, 15.0, s2, sub1, ex1));
+		gradeRepository.save(new Grade((long) 8, 13.0, s2, sub2, ex1));
+		gradeRepository.save(new Grade((long) 9, 12.5, s2, sub3, ex1));
+		gradeRepository.save(new Grade((long) 10, 16.0, s2, sub4, ex1));
+		gradeRepository.save(new Grade((long) 11, 12.0, s2, sub5, ex1));
+		gradeRepository.save(new Grade((long) 12, 18.5, s2, sub6, ex1));
 
-		gradeRepository.save(new Grade((long) 7, 9.5, s3, sub2, ex1));
-		gradeRepository.save(new Grade((long) 8, 11.5, s3, sub4, ex1));
-		gradeRepository.save(new Grade((long) 9, 15.0, s3, sub6, ex1));
+		gradeRepository.save(new Grade((long) 13, 9.5, s3, sub1, ex1));
+		gradeRepository.save(new Grade((long) 14, 11.5, s3, sub2, ex1));
+		gradeRepository.save(new Grade((long) 15, 15.0, s3, sub3, ex1));
+		gradeRepository.save(new Grade((long) 16, 13.0, s3, sub4, ex1));
+		gradeRepository.save(new Grade((long) 17, 11.25, s3, sub5, ex1));
+		gradeRepository.save(new Grade((long) 18, 9.25, s3, sub6, ex1));
 
-		gradeRepository.save(new Grade((long) 10, 16.0, s4, sub1, ex1));
-		gradeRepository.save(new Grade((long) 11, 10.0, s4, sub3, ex1));
-		gradeRepository.save(new Grade((long) 12, 9.0, s4, sub5, ex1));
+		gradeRepository.save(new Grade((long) 19, 16.0, s4, sub1, ex1));
+		gradeRepository.save(new Grade((long) 20, 10.25, s4, sub2, ex1));
+		gradeRepository.save(new Grade((long) 21, 9.0, s4, sub3, ex1));
+		gradeRepository.save(new Grade((long) 22, 17.5, s4, sub4, ex1));
+		gradeRepository.save(new Grade((long) 23, 10.0, s4, sub5, ex1));
+		gradeRepository.save(new Grade((long) 24, 8.5, s4, sub6, ex1));
 
-		gradeRepository.save(new Grade((long) 10, 10.0, s5, sub2, ex1));
-		gradeRepository.save(new Grade((long) 11, 14.0, s5, sub3, ex1));
-		gradeRepository.save(new Grade((long) 12, 19.0, s5, sub4, ex1));
+		gradeRepository.save(new Grade((long) 25, 12.5, s5, sub1, ex1));
+		gradeRepository.save(new Grade((long) 26, 14.0, s5, sub2, ex1));
+		gradeRepository.save(new Grade((long) 27, 18.0, s5, sub3, ex1));
+		gradeRepository.save(new Grade((long) 26, 10.5, s5, sub4, ex1));
+		gradeRepository.save(new Grade((long) 27, 10.0, s5, sub5, ex1));
+		gradeRepository.save(new Grade((long) 28, 14.5, s5, sub6, ex1));
 
-		gradeRepository.save(new Grade((long) 10, 8.0, s6, sub1, ex1));
-		gradeRepository.save(new Grade((long) 11, 5.0, s6, sub3, ex1));
-		gradeRepository.save(new Grade((long) 12, 10.0, s6, sub6, ex1));
+		gradeRepository.save(new Grade((long) 29, 8.0, s6, sub1, ex1));
+		gradeRepository.save(new Grade((long) 30, 5.0, s6, sub2, ex1));
+		gradeRepository.save(new Grade((long) 31, 10.0, s6, sub3, ex1));
+		gradeRepository.save(new Grade((long) 32, 12.25, s6, sub4, ex1));
+		gradeRepository.save(new Grade((long) 33, 10.5, s6, sub5, ex1));
+		gradeRepository.save(new Grade((long) 34, 14.5, s6, sub6, ex1));
+		
+		gradeRepository.save(new Grade((long) 35, 13.25, s7, sub1, ex1));
+		gradeRepository.save(new Grade((long) 36, 15.0, s7, sub2, ex1));
+		gradeRepository.save(new Grade((long) 37, 8.0, s7, sub3, ex1));
+		gradeRepository.save(new Grade((long) 38, 10.5, s7, sub4, ex1));
+		gradeRepository.save(new Grade((long) 39, 12.0, s7, sub5, ex1));
+		gradeRepository.save(new Grade((long) 40, 13.5, s7, sub6, ex1));
+		
+		gradeRepository.save(new Grade((long) 41, 18.0, s8, sub1, ex1));
+		gradeRepository.save(new Grade((long) 42, 15.0, s8, sub2, ex1));
+		gradeRepository.save(new Grade((long) 43, 12.5, s8, sub3, ex1));
+		gradeRepository.save(new Grade((long) 44, 11.25, s8, sub4, ex1));
+		gradeRepository.save(new Grade((long) 45, 13.5, s8, sub5, ex1));
+		gradeRepository.save(new Grade((long) 46, 14.5, s8, sub6, ex1));
+		
+		gradeRepository.save(new Grade((long) 47, 5.0, s9, sub1, ex1));
+		gradeRepository.save(new Grade((long) 48, 10.5, s9, sub2, ex1));
+		gradeRepository.save(new Grade((long) 49, 11.0, s9, sub3, ex1));
+		gradeRepository.save(new Grade((long) 50, 12.5, s9, sub4, ex1));
+		gradeRepository.save(new Grade((long) 51, 15.0, s9, sub5, ex1));
+		gradeRepository.save(new Grade((long) 52, 14.5, s9, sub6, ex1));
 
 	}
 
