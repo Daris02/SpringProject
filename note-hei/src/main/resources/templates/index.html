@@ -56,7 +56,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link diseable" th:href="@{/rateStudent}"> Rate Student </a>
+              <a class="nav-link disabled" th:href="@{/rateStudent}"> Rate Student </a>
             </li>
             
           </ul>
@@ -65,7 +65,34 @@
     </nav>
   </header>
 
-<h1 class="text-warning"> Note des Etudiants </h1>
+  <div class="container">
+      <h1 class="text-warning"> HEI <br> Student's grade </h1>
+  </div>
+  
+  <div class="container-fluid row justify-content-around mt-5">
+    <div class="card col-4">
+      <div class="card-header">
+        Student
+      </div>
+      <div class="card-body mx-5">
+        <h5 class="card-title">See all Student</h5>
+        <p th:text=" 'Number of student : ' + ${numberStudent}"></p>
+        <a th:href="@{/student}" class="btn btn-warning">Go student</a>
+      </div>
+    </div>
+
+    <div class="card col-4">
+      <div class="card-header">
+        Group
+      </div>
+      <div class="card-body mx-5">
+        <h5 class="card-title">See all Group</h5>
+        <p th:text=" 'Number of group : ' + ${numberGroup}"></p>
+        <a th:href="@{/groupe}" class="btn btn-warning">Go group</a>
+      </div>
+    </div>
+
+  </div>
 
 </body>
 
