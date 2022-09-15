@@ -6,6 +6,9 @@ import java.util.List;
 
 
 import javax.validation.constraints.NotEmpty;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.validation.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -30,6 +33,7 @@ public class Examen implements Serializable {
     private String title;
 
     @Column     // CHECK DATE > new Date()
+    @DateTimeFormat
     private Date date_exam;
 
     @Transient

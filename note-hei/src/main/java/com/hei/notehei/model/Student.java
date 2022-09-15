@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
-import lombok.*;
-
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
