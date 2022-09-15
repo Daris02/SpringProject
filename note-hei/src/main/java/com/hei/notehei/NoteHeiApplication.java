@@ -66,6 +66,18 @@ public class NoteHeiApplication implements CommandLineRunner {
 							  new Date(2022-10-15), grade));
 		examenRepository.save(new Examen((long) 2, "Test",
 							  new Date(2022-11-10), grade));
+
+
+    studentRepository.save(new Student((long) 1, "Chirstophe", "Jordan", "chrisjordan@gmail.com", 'M', groupe1, grade));
+    studentRepository.save(new Student((long) 2, "Marie", "Elizabathe", "marieliz@gmail.com", 'F', groupe1, grade));
+    studentRepository.save(new Student((long) 3, "Sing", "Petter", "pettersing@gmail.com", 'M', groupe1, grade));
+    studentRepository.save(new Student((long) 4, "Evan", "Clark", "clarkevan@gmail.com", 'M', groupe2, grade));
+    studentRepository.save(new Student((long) 5, "Walker", "Bill", "billwalker@gmail.com", 'M', groupe2, grade));
+    studentRepository.save(new Student((long) 6, "Grande", "Max", "maxgrande@gmail.com", 'F', groupe2, grade));
+    studentRepository.save(new Student((long) 7, "Raven", "Eva", "evaraven@gmail.com", 'F', groupe3, grade));
+    studentRepository.save(new Student((long) 8, "Patterson", "Carle", "carlepatterson@gmail.com", 'M', groupe3, grade));
+    studentRepository.save(new Student((long) 9, "Dominique", "Gary", "garydom@gmail.com", 'M', groupe3, grade));
+
 	}
 
 }
